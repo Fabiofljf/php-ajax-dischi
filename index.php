@@ -22,13 +22,14 @@ $date = json_decode(($json));
 
 // var_dump($date); // - Struttura dati pronta all'utilizzo.
 
-foreach($date as $dati){
-    //var_dump($dati); // - Array complete.
-    foreach($dati as $key => $value){
+foreach($date as $object => $array){
+    //var_dump($object); // - Success e Response
+    //var_dump($array); // - Response => Array complete.
+    foreach($array as $key => $value){
         //var_dump($key); // - Index.
-        //var_dump($value); // -Singole array.
-        foreach($value as $info => $dettagli){
-            //var_dump($info); // - Info (poster, title...ecc).
+        //var_dump($value); // - Singole array.
+        foreach($value as $info){
+            var_dump($info); // - Info (poster, title...ecc).
             //var_dump($dettagli); // - Stringhe delle info.
         }
     }
@@ -75,7 +76,17 @@ foreach($date as $dati){
             <div class="container">
                 <div class="row">
                     <div class="col">
-
+                        <div class="card">
+                            <?php foreach($date as $dati) : ?>
+                                <?php foreach($dati as $key => $value) : ?>
+                                    <?php foreach($value as $info => $dettagli) : ?>
+                                        <div>
+                                            <?= $dettagli ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
