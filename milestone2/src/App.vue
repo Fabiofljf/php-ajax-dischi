@@ -18,7 +18,7 @@
           <div class="row row-cols-5 g-5">
             <div class="col">
               <div class="card">
-                <img src="<?= $album['poster'] ?>" alt="" />
+                <img src="poster" alt="" />
                 <h4 class="text-center text-light">title</h4>
                 <h5 class="text-center c_text_grey">author</h5>
                 <h5 class="text-center c_text_grey">year</h5>
@@ -39,7 +39,7 @@ export default {
   name: "App",
   data(){
     return{
-      Api_link: 'http://localhost:8888/PHP/php-ajax-dischi/milestone1/db.php',
+      Api_link: "http://localhost:8888/PHP/php-ajax-dischi/milestone1/api.php",
     }
   },
   methods: {

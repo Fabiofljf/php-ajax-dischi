@@ -75,17 +75,4 @@ $albums =
         ]
 
     ];
-
-// var_dump($albums); // - Struttura dati pronta all'utilizzo.
-
-foreach ($albums as $album) {
-    //var_dump($album); // - Single Array.
-    //var_dump($album['title']); // - Single information.
-}
-
-
-header('Content-type', 'application/json');
-
-echo json_encode($albums);
-
 ?>
