@@ -17,6 +17,10 @@ body {
 
 /* UTILITIES */
 
+.c_text_grey {
+    color: #7B7F80;
+}
+
 
 /* HEADER */
 
@@ -33,3 +37,13 @@ body {
 
 
 /* MAIN */
+
+.card {
+    background-color: #2E3A46;
+    height: 380px;
+}
+
+.card img {
+    padding: 20px;
+    height: 200px
+}

@@ -132,14 +132,14 @@ foreach ($albums as $album) {
     <main id="site_main">
         <section id="music" class="my-5">
             <div class="container">
-                <div class="row row-cols-5 g-3">
+                <div class="row row-cols-5 g-5">
                     <?php foreach ($albums as $album) : ?>
                         <div class="col">
                             <div class="card">
                                 <img src="<?= $album['poster'] ?>" alt="">
                                 <h4 class="text-center text-light"><?= $album['title'] ?></h4>
-                                <h5 class="text-center"><?= $album['author'] ?></h5>
-                                <h5 class="text-center"><?= $album['year'] ?></h5>
+                                <h5 class="text-center c_text_grey"><?= $album['author'] ?></h5>
+                                <h5 class="text-center c_text_grey"><?= $album['year'] ?></h5>
                             </div>
                         </div>
                     <?php endforeach; ?>
