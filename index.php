@@ -22,13 +22,13 @@ $date = json_decode(($json));
 
 // var_dump($date); // - Struttura dati pronta all'utilizzo.
 
-foreach($date as $object => $array){
+foreach ($date as $object => $array) {
     //var_dump($object); // - Success e Response
     //var_dump($array); // - Response => Array complete.
-    foreach($array as $key => $value){
+    foreach ($array as $key => $value) {
         //var_dump($key); // - Index.
         //var_dump($value); // - Singole array.
-        foreach($value as $info => $dettagli){
+        foreach ($value as $info => $dettagli) {
             var_dump($info); // - Info (poster, title...ecc).
             var_dump($dettagli); // - Stringhe delle info.
         }
@@ -46,13 +46,12 @@ foreach($date as $object => $array){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Link Google Font -->
 
     <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Link Css -->
     <link rel="stylesheet" href="./assets-php/css/style.css">
@@ -76,24 +75,24 @@ foreach($date as $object => $array){
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="card">
-                            <?php foreach($date as $dati) : ?>
-                                <?php foreach($dati as $key => $value) : ?>
-                                    <?php foreach($value as $info => $dettagli) : ?>
+                        <?php foreach ($date as $dati) : ?>
+                            <?php foreach ($dati as $key => $value) : ?>
+                                <div class="card">
+                                    <?php foreach ($value as $info => $dettagli) : ?>
                                         <div>
                                             <?= $dettagli ?>
                                         </div>
                                     <?php endforeach; ?>
-                                <?php endforeach; ?>
+                                </div>
                             <?php endforeach; ?>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <!-- /#site_main -->
-    
+
 </body>
 
 </html>
