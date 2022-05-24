@@ -1,0 +1,38 @@
+/* UTILITIES */
+
+.c_text_grey {
+    color: #7B7F80;
+}
+
+
+/* HEADER */
+
+svg {
+    fill: #1ED761;
+    width: 70px;
+    margin-left: 10px;
+}
+
+.Upbarr {
+    height: 100px;
+    background-color: #2E3A46;
+    display: flex;
+}
+
+
+/* MAIN */
+
+.card {
+    background-color: #2E3A46;
+    height: 380px;
+}
+
+.card img {
+    padding: 20px;
+    height: 200px
+}
+
+
+/* IMPORT BOOTSTRAP */
+
+@import '~/node_modules/bootstrap/scss/bootstrap.scss';
