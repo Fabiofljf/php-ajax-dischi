@@ -24,15 +24,16 @@ body {
 
 /* HEADER */
 
+svg {
+    fill: #1ED761;
+    width: 70px;
+    margin-left: 10px;
+}
+
 .Upbarr {
     height: 100px;
     background-color: #2E3A46;
     display: flex;
-}
-
-.Upbarr img {
-    width: 70px;
-    margin-left: 10px;
 }
 
 
