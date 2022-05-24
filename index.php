@@ -10,29 +10,88 @@ Attraverso un’altra chiamata api, filtrare gli album per genere
 -->
 
 <?php
-// 1. Per poter usare la struttura dati precedentemente acquisita (in json) devo usare una funzione che mi decodifica la struttura dati, in modo da poterla leggere in PHP.
+// 1. Creo la struttura dati da utilizzare.
 
-$json = '{"success":true,"response":[{"poster":"https:\/\/www.onstageweb.com\/wp-content\/uploads\/2018\/09\/bon-jovi-new-jersey.jpg","title":"New Jersey","author":"Bon Jovi","genre":"Rock","year":"1988"},{"poster":"https:\/\/img.discogs.com\/vknPDdrqRbT92pNRX0W4I5N91jg=\/fit-in\/300x300\/filters:strip_icc():format(jpeg):mode_rgb():quality(40)\/discogs-images\/R-1246953-1448927086-6590.jpeg.jpg","title":"Live at Wembley 86","author":"Queen","genre":"Pop","year":"1992"},{"poster":"https:\/\/images-na.ssl-images-amazon.com\/images\/I\/41JD3CW65HL.jpg","title":"Ten\'s Summoner\'s Tales","author":"Sting","genre":"Pop","year":"1993"},{"poster":"https:\/\/cdn2.jazztimes.com\/2018\/05\/SteveGadd-800x723.jpg","title":"Steve Gadd Band","author":"Steve Gadd Band","genre":"Jazz","year":"2018"},{"poster":"https:\/\/images-na.ssl-images-amazon.com\/images\/I\/810nSIQOLiL._SY355_.jpg","title":"Brave new World","author":"Iron Maiden","genre":"Metal","year":"2000"},{"poster":"https:\/\/upload.wikimedia.org\/wikipedia\/en\/9\/97\/Eric_Clapton_OMCOMR.jpg","title":"One more car, one more raider","author":"Eric Clapton","genre":"Rock","year":"2002"},{"poster":"https:\/\/images-na.ssl-images-amazon.com\/images\/I\/51rggtPgmRL.jpg","title":"Made in Japan","author":"Deep Purple","genre":"Rock","year":"1972"},{"poster":"https:\/\/images-na.ssl-images-amazon.com\/images\/I\/81r3FVfNG3L._SY355_.jpg","title":"And Justice for All","author":"Metallica","genre":"Metal","year":"1988"},{"poster":"https:\/\/img.discogs.com\/KOBsqQwKiNKH-q927oHMyVdDzSo=\/fit-in\/596x596\/filters:strip_icc():format(jpeg):mode_rgb():quality(90)\/discogs-images\/R-6406665-1418464475-6120.jpeg.jpg","title":"Hard Wired","author":"Dave Weckl","genre":"Jazz","year":"1994"},{"poster":"https:\/\/m.media-amazon.com\/images\/I\/71K9CbNZPsL._SS500_.jpg","title":"Bad","author":"Michael Jacjson","genre":"Pop","year":"1987"}]}';
+$albums =
+    [
+        [
+            "poster" => "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
+            "title" => "New Jersey",
+            "author" => "Bon Jovi",
+            "genre" => "Rock",
+            "year" => "1988"
+        ],
+        [
+            "poster" => "https://img.discogs.com/vknPDdrqRbT92pNRX0W4I5N91jg=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1246953-1448927086-6590.jpeg.jpg",
+            "title" => "Live at Wembley 86",
+            "author" => "Queen",
+            "genre" => "Pop",
+            "year" => "1992"
+        ],
+        [
+            "poster" => "https://images-na.ssl-images-amazon.com/images/I/41JD3CW65HL.jpg",
+            "title" => "Ten's Summoner's Tales",
+            "author" => "Sting",
+            "genre" => "Pop",
+            "year" => "1993"
+        ],
+        [
+            "poster" => "https://cdn2.jazztimes.com/2018/05/SteveGadd-800x723.jpg",
+            "title" => "Steve Gadd Band",
+            "author" => "Steve Gadd Band",
+            "genre" => "Jazz",
+            "year" => "2018"
+        ],
+        [
+            "poster" => "https://images-na.ssl-images-amazon.com/images/I/810nSIQOLiL._SY355_.jpg",
+            "title" => "Brave new World",
+            "author" => "Iron Maiden",
+            "genre" => "Metal",
+            "year" => "2000"
+        ],
+        [
+            "poster" => "https://upload.wikimedia.org/wikipedia/en/9/97/Eric_Clapton_OMCOMR.jpg",
+            "title" => "One more car, one more raider",
+            "author" => "Eric Clapton",
+            "genre" => "Rock",
+            "year" => "2002"
+        ],
+        [
+            "poster" => "https://images-na.ssl-images-amazon.com/images/I/51rggtPgmRL.jpg",
+            "title" => "Made in Japan",
+            "author" => "Deep Purple",
+            "genre" => "Rock",
+            "year" => "1972"
+        ],
+        [
+            "poster" => "https://images-na.ssl-images-amazon.com/images/I/81r3FVfNG3L._SY355_.jpg",
+            "title" => "And Justice for All",
+            "author" => "Metallica",
+            "genre" => "Metal",
+            "year" => "1988"
+        ],
+        [
+            "poster" => "https://img.discogs.com/KOBsqQwKiNKH-q927oHMyVdDzSo=/fit-in/596x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6406665-1418464475-6120.jpeg.jpg",
+            "title" => "Hard Wired",
+            "author" => "Dave Weckl",
+            "genre" => "Jazz",
+            "year" => "1994"
+        ],
+        [
+            "poster" => "https://m.media-amazon.com/images/I/71K9CbNZPsL._SS500_.jpg",
+            "title" => "Bad",
+            "author" => "Michael Jacjson",
+            "genre" => "Pop",
+            "year" => "1987"
+        ]
 
-// var_dump(json_decode($json)); // - Questa è la funzione che mi restituisce il valore codificato nel json tipo PHP appropriato.
+    ];
 
-// 2. Per poter utilizzare la struttura dati codificata ho bisogno di salvarla in una variabile.
+// var_dump($albums); // - Struttura dati pronta all'utilizzo.
 
-$date = json_decode(($json));
-
-// var_dump($date); // - Struttura dati pronta all'utilizzo.
-
-foreach ($date as $object => $array) {
-    //var_dump($object); // - Success e Response
-    //var_dump($array); // - Response => Array complete.
-    foreach ($array as $key => $value) {
-        //var_dump($key); // - Index.
-        //var_dump($value); // - Singole array.
-        foreach ($value as $info => $dettagli) {
-            var_dump($info); // - Info (poster, title...ecc).
-            var_dump($dettagli); // - Stringhe delle info.
-        }
-    }
+foreach ($albums as $album) {
+    //var_dump($album); // - Single Array.
+    //var_dump($album['title']); // - Single information.
 }
 
 ?>
@@ -71,22 +130,19 @@ foreach ($date as $object => $array) {
     <!-- /#site_header -->
 
     <main id="site_main">
-        <section id="music">
+        <section id="music" class="my-5">
             <div class="container">
                 <div class="row row-cols-5 g-3">
-                    <?php foreach ($date as $dati) : ?>
-                        <?php foreach ($dati as $key => $value) : ?>
-                            <div class="col">
-                                <div class="card">
-                                    <?php foreach ($value as $info => $dettagli) : ?>
-                                        <div>
-                                            <?= $info ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
+                    <?php foreach ($albums as $album) : ?>
+                        <div class="col">
+                            <div class="card">
+                                <img src="<?= $album['poster'] ?>" alt="">
+                                <h4 class="text-center text-light"><?= $album['title'] ?></h4>
+                                <h5 class="text-center"><?= $album['author'] ?></h5>
+                                <h5 class="text-center"><?= $album['year'] ?></h5>
                             </div>
-                            <?php endforeach; ?>
-                        <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
