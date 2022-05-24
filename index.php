@@ -73,20 +73,20 @@ foreach ($date as $object => $array) {
     <main id="site_main">
         <section id="music">
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <?php foreach ($date as $dati) : ?>
-                            <?php foreach ($dati as $key => $value) : ?>
+                <div class="row row-cols-5 g-3">
+                    <?php foreach ($date as $dati) : ?>
+                        <?php foreach ($dati as $key => $value) : ?>
+                            <div class="col">
                                 <div class="card">
                                     <?php foreach ($value as $info => $dettagli) : ?>
                                         <div>
-                                            <?= $dettagli ?>
+                                            <?= $info ?>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
+                            </div>
                             <?php endforeach; ?>
                         <?php endforeach; ?>
-                    </div>
                 </div>
             </div>
         </section>
