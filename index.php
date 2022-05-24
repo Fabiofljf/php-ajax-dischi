@@ -28,9 +28,9 @@ foreach($date as $object => $array){
     foreach($array as $key => $value){
         //var_dump($key); // - Index.
         //var_dump($value); // - Singole array.
-        foreach($value as $info){
+        foreach($value as $info => $dettagli){
             var_dump($info); // - Info (poster, title...ecc).
-            //var_dump($dettagli); // - Stringhe delle info.
+            var_dump($dettagli); // - Stringhe delle info.
         }
     }
 }
