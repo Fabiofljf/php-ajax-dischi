@@ -36,7 +36,7 @@ var_dump(json_decode($json)); // - Questa è la funzione che mi restituisce il v
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Link Css -->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./assets-php/css/style.css">
 
     <!-- TITLE -->
     <title>PHP Dischi</title>
@@ -45,6 +45,25 @@ var_dump(json_decode($json)); // - Questa è la funzione che mi restituisce il v
 
 <body>
 
+    <header id="site_header">
+        <div class="Upbarr">
+            <img src="./assets-php/img/spotify-brands.svg" alt="logo spotify">
+        </div>
+    </header>
+    <!-- /#site_header -->
+
+    <main id="site_main">
+        <section id="music">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- /#site_main -->
     
 </body>
 

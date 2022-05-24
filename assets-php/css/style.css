@@ -1,0 +1,31 @@
+/* COMMONS ROULES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* UTILITIES */
+
+
+/* HEADER */
+
+.Upbarr {
+    height: 100px;
+    background-color: #2E3A46;
+    display: flex;
+}
+
+.Upbarr img {
+    width: 70px;
+    margin-left: 10px;
+}
+
+
+/* MAIN */
