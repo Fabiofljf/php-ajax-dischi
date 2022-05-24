@@ -22,7 +22,17 @@ $date = json_decode(($json));
 
 // var_dump($date); // - Struttura dati pronta all'utilizzo.
 
-
+foreach($date as $dati){
+    //var_dump($dati); // - Array complete.
+    foreach($dati as $key => $value){
+        //var_dump($key); // - Index.
+        //var_dump($value); // -Singole array.
+        foreach($value as $info => $dettagli){
+            //var_dump($info); // - Info (poster, title...ecc).
+            //var_dump($dettagli); // - Stringhe delle info.
+        }
+    }
+}
 
 ?>
 
