@@ -76,4 +76,3 @@ $albums =
     ];
 
 //var_dump($albums);
-?>

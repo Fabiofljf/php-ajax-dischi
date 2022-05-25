@@ -39,7 +39,7 @@ export default {
   name: "App",
   data(){
     return{
-      Api_link: "http://localhost/PHP/php-ajax-dischi/milestone1/api.php",
+      Api_link: "http://localhost:8888/PHP/php-ajax-dischi/milestone1/api.php",
     }
   },
   methods: {
@@ -51,6 +51,9 @@ export default {
         });
     },
   },
+  mounted(){
+    this.callApi()
+  }
 };
 </script>
 
