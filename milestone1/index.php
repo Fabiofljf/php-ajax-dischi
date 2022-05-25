@@ -1,4 +1,8 @@
-<?php require __DIR__ . '/db.php'; ?>
+<?php 
+
+require __DIR__ . '/db.php'; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

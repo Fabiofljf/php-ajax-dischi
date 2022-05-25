@@ -1,5 +1,4 @@
 <?php
-// 1. Creo la struttura dati da utilizzare.
 
 $albums =
     [
@@ -75,4 +74,6 @@ $albums =
         ]
 
     ];
+
+//var_dump($albums);
 ?>
