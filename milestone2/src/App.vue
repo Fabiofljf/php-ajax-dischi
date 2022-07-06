@@ -16,12 +16,12 @@
       <section id="music" class="my-5">
         <div class="container">
           <div class="row row-cols-5 g-5">
-            <div class="col">
+            <div class="col" v-for="album in albums" :key="album.index">
               <div class="card">
-                <img src="poster" alt="" />
-                <h4 class="text-center text-light">title</h4>
-                <h5 class="text-center c_text_grey">author</h5>
-                <h5 class="text-center c_text_grey">year</h5>
+                <img :src="album.poster" alt="" />
+                <h4 class="text-center text-light">{{album.title}}</h4>
+                <h5 class="text-center c_text_grey">{{album.author}}</h5>
+                <h5 class="text-center c_text_grey">{{album.year}}</h5>
               </div>
             </div>
           </div>
@@ -40,6 +40,7 @@ export default {
   data(){
     return{
       Api_link: "http://localhost:8888/PHP/php-ajax-dischi/milestone1/api.php",
+      albums: ""
     }
   },
   methods: {
@@ -48,6 +49,7 @@ export default {
         .get(this.Api_link)
         .then((response) => {
           console.log(response);
+          this.albums = response.data
         });
     },
   },
